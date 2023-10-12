@@ -15,6 +15,7 @@ const Empty = ({
     avatar: string;
   };
 }) => {
+  const { data: coffee } = useMarkdown({ url: '/coffee.md' });
   const { data: chatProblem } = useMarkdown({ url: '/chatProblem.md' });
   const { data: versionIntro } = useMarkdown({ url: '/versionIntro.md' });
 
@@ -43,6 +44,9 @@ const Empty = ({
       {showChatProblem && (
         <>
           {/* version intro */}
+          <Card p={4} mb={10}>
+            <Markdown source={coffee} />
+          </Card>
           <Card p={4} mb={10}>
             <Markdown source={versionIntro} />
           </Card>

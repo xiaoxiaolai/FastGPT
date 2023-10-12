@@ -31,7 +31,7 @@ const LoginForm = ({ setPageType, loginSuccess }: Props) => {
     register,
     handleSubmit,
     formState: { errors }
-  } = useForm<LoginFormType>();
+  } = useForm<LoginFormType>({ defaultValues: {username: "root", password: "fastgpt"}});
 
   const [requesting, setRequesting] = useState(false);
 
